@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.dashboardDocente')
 	
 @section('content')
-	<h1>entreste jijiBienvenido al panel vacio ! yaaaaay fiestaaa!</h1>
-	{{ auth('docentes')->user()->email }}
+	<h1>Bienvenido</h1>
+	<h3>Identificado como: {{ auth('docentes')->user()->nombre }}  {{ auth('docentes')->user()->apellidos }}</h3> 
 @endsection

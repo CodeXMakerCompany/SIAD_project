@@ -55,6 +55,11 @@ return [
            'driver' => 'session',
            'provider' => 'docentes',
        ],
+
+        'administrativos' => [
+           'driver' => 'session',
+           'provider' => 'administrativos',
+       ],
     ],
 
     /*
@@ -89,6 +94,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Docente::class,
         ],
+
+        'administrativos' => [
+            'driver' => 'eloquent',
+            'model' => App\Administrativo::class,
+        ]
         
         // 'users' => [
         //     'driver' => 'database',

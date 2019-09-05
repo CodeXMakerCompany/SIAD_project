@@ -15,7 +15,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Alumnos</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Añadir</a>
+                            <a href="{{ route('admin.añadirAlumno') }}">Añadir</a>
                         </li>
                         <li>
                             <a href="#">Eliminar</a>
@@ -24,7 +24,7 @@
                             <a href="#">Actualizar</a>
                         </li>
                         <li>
-                            <a href="#">Ver</a>
+                            <a href="{{ route('ver.alumnos') }}">Ver</a>
                         </li>
                     </ul>
                 </li>
@@ -33,7 +33,7 @@
                     <a href="#docenteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Docentes</a>
                     <ul class="collapse list-unstyled" id="docenteSubmenu">
                         <li>
-                            <a href="#">Añadir</a>
+                            <a href="{{ route('admin.añadirDocente') }}">Añadir</a>
                         </li>
                         <li>
                             <a href="#">Eliminar</a>
@@ -51,7 +51,7 @@
                     <a href="#administrativoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administrativos</a>
                     <ul class="collapse list-unstyled" id="administrativoSubmenu">
                         <li>
-                            <a href="#">Añadir</a>
+                            <a href="{{ route('admin.añadirAdministrativo') }}">Añadir</a>
                         </li>
                         <li>
                             <a href="#">Eliminar</a>
@@ -69,7 +69,7 @@
                     <a href="#admCarreraSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cordinador de carrera</a>
                     <ul class="collapse list-unstyled" id="admCarreraSubmenu">
                         <li>
-                            <a href="#">Añadir</a>
+                            <a href="{{ route('admin.añadirCoordinador') }}">Añadir</a>
                         </li>
                         <li>
                             <a href="#">Eliminar</a>

@@ -30,10 +30,22 @@
 /*Login*/
 
 .row .tipoLogin{
-  height: 80px;
-  width: 80px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
 }
+
+.row .tipoLogin:hover{
+    border-color: black;
+    border-width: 2px;
+    box-shadow: 0 0 1em black;
+}
+
+.btnCustom{
+    color: #fff;
+    background-color: orange;
+}
+/*End login*/
 
 /*Navbar-Dashboards*/
 .navbar {
@@ -93,22 +105,25 @@
 #sidebar ul p {
     color: #fff;
     padding: 10px;
+
 }
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.3em;
     display: block;
+    color: #282020;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #fff;
+    background: #282020;
+    text-decoration: none;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
+    color: #282020;
     background: #6d7fcc;
 }
 
