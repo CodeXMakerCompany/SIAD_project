@@ -31,3 +31,9 @@ Route::post('/guardar_tarea', 'UserController@guardarTarea')->name('user.guardar
 Route::get('/contactos', 'MensajeController@verContactos')->name('mensaje.contactos');
 Route::get('/chat/{id}', 'MensajeController@chatUser')->name('mensaje.user');
 Route::post('/enviar', 'MensajeController@storeMessage')->name('mensaje.save');
+
+
+//Administradores
+Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'AdminController@login');
+Route::get('/admin/area', 'AdminController@secret');
