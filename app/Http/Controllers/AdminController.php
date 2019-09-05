@@ -9,7 +9,12 @@ class AdminController extends Controller
 {
     use AuthenticatesUsers;
 
-    
+    //filtro para que solo la sesion de admin pueda ingresara las urls
+    function __construct(){
+
+        $this->middleware('auth:admins', ['only' => ['secret']]);
+
+    }
 
     protected function guard()
     {

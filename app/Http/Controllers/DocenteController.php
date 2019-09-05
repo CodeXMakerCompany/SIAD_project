@@ -13,6 +13,13 @@ class DocenteController extends Controller
 
 	use AuthenticatesUsers;
 
+	//filtro
+	function __construct(){
+
+		$this->middleware('auth:docentes', ['only' => ['secret']]);
+
+	}
+
 	protected function guard()
     {
         return Auth::guard('docentes');
