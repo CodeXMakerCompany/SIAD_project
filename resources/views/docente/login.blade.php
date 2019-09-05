@@ -4,41 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div align="center">
-                <h2>Seleccione su tipo de cuenta</h2>
-                <hr>
-            </div>
-            
-            <div class="row" align="center">
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="{{ route('login') }}">
-                     <button type="button" class="btn btn-primary  tipoLogin">Alumno</button>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="{{ route('docente.login') }}">
-                        <button type="button" class="btn btn-dark  tipoLogin">Docente</button>
-                    </a>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="{{ route('admin.login') }}">
-                        <button type="button" class="btn btn-success tipoLogin">Admin</button>            
-                    </a>
-                </div>
-
-            </div>
-            <br>
-            <hr>
-
-            <div class="card">
-                <div class="card-header">{{ __('Login Alumno') }}</div>
+          <div class="card">
+                <div class="card-header">{{ __('Login Docentes') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <form method="POST" action="{{ url('/docente/login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
                         <div class="form-group row">

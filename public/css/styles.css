@@ -26,3 +26,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #A2CCDA; 
 }
+
+/*Login*/
+
+.row .tipoLogin{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}

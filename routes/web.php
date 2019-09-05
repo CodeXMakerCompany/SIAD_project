@@ -33,7 +33,12 @@ Route::get('/chat/{id}', 'MensajeController@chatUser')->name('mensaje.user');
 Route::post('/enviar', 'MensajeController@storeMessage')->name('mensaje.save');
 
 
-//Administradores
+//Administradores-Ingreso
 Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'AdminController@login');
 Route::get('/admin/area', 'AdminController@secret');
+
+//Docentes-Ingreso
+Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');
+Route::post('/docente/login', 'DocenteController@login');
+Route::get('/docente/area', 'DocenteController@secret');

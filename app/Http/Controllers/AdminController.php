@@ -29,7 +29,8 @@ class AdminController extends Controller
 
     public function secret() {
 
-    	return 'Hola ' .auth('admins')->user()->email;
+    	return view('admin.dashboard');
+    	//'Hola ' .auth('admins')->user()->email;
 
     }
 }
