@@ -49,12 +49,25 @@ Route::get('/admin/area', 'AdminController@secret');
 	/*Docentes*/
 	Route::get('/admin/añadir-docente', 'AdminController@addDocente')->name('admin.añadirDocente');
 	Route::post('/save/docente', 'AdminController@saveDocente')->name('save.docente');
+	Route::get('/ver/docentes', 'AdminController@verDocentes')->name('ver.docentes');
+	Route::get('/editar/docente/{id}', 'AdminController@editarDocente')->name('editar.docente');
+	Route::post('/actualizar/docente/{id}', 'AdminController@actualizarDocente')->name('actualizar.docente');
+	Route::get('/eliminar/docente/{id}', 'AdminController@eliminarDocente')->name('eliminar.docente');
+
 	/*Administrativos*/
 	Route::get('/admin/añadir-administrativo', 'AdminController@addAdministrativo')->name('admin.añadirAdministrativo');
 	Route::post('/save/administrativo', 'AdminController@saveAdministrativo')->name('save.administrativo');
+	Route::get('/ver/administrativos', 'AdminController@verAdministrativos')->name('ver.administrativos');
+	Route::get('/editar/administrativo/{id}', 'AdminController@editarAdministrativo')->name('editar.administrativo');
+	Route::post('/actualizar/administrativo/{id}', 'AdminController@actualizarAdministrativo')->name('actualizar.administrativo');
+	Route::get('/eliminar/administrativo/{id}', 'AdminController@eliminarAdministrativo')->name('eliminar.administrativo');
+
 	/*Coordinadores*/
 	Route::get('/admin/añadir-coordinador', 'AdminController@addCoordinador')->name('admin.añadirCoordinador');
 	Route::post('/save/coordinador', 'AdminController@saveCoordinador')->name('save.coordinador');
+	Route::get('/ver/coordinadores', 'AdminController@verCoordinador')->name('ver.coordinador');
+	Route::get('/editar/coordinador/{id}', 'AdminController@editarCoordinador')->name('editar.coordinador');
+	Route::post('/actualizar/coordinador/{id}', 'AdminController@actualizarCoordinador')->name('actualizar.coordinador');
 
 //Docentes-Ingreso
 Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');

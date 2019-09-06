@@ -30,7 +30,7 @@
                             <a href="{{ route('admin.añadirDocente') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Gestionar docentes</a>
+                            <a href="{{ route('ver.docentes') }}">Gestionar docentes</a>
                         </li>
                     </ul>
                 </li>
@@ -42,7 +42,7 @@
                             <a href="{{ route('admin.añadirAdministrativo') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Gestionar administrativos</a>
+                            <a href="{{ route('ver.administrativos') }}">Gestionar administrativos</a>
                         </li>
                     </ul>
                 </li>
@@ -54,7 +54,7 @@
                             <a href="{{ route('admin.añadirCoordinador') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Gestionar coordinadores</a>
+                            <a href="{{ route('ver.coordinador') }}">Gestionar coordinadores</a>
                         </li>
                     </ul>
                 </li>

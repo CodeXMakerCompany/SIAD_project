@@ -1,7 +1,8 @@
 @extends('layouts.dashboardAdmin')
 
 @section('content')
-<center>
+	<div class="container">
+		<center>
 	<div class="col-md-10">
 	@if (session('message'))
  		<div class="alert alert-success">
@@ -10,8 +11,7 @@
  	@endif
 </div>
 </center>
-	<div class="container">
-	  <h2>Alumnos del sistema</h2>            
+	  <h2>Docentes del sistema</h2>            
 	  <table class="table table-dark table-striped">
 	    <thead>
 	      <tr>
@@ -27,22 +27,22 @@
 	    <tbody>
 
 	      
-	        @foreach ($alumnos as $alumno)
+	        @foreach ($docentes as $docente)
 	        <tr>
-	        	<td>{{ $alumno->nombre }}</td>
-				<td>{{ $alumno->apellidos }}</td>
-				<td>{{ $alumno->email }}</td>
-				<td>{{ $alumno->carnetEs }}</td>
-				<td>{{ $alumno->cedulaEs }}</td>
-				<td>{{ $alumno->celularEs }}</td>
+	        	<td>{{ $docente->nombre }}</td>
+				<td>{{ $docente->apellidos }}</td>
+				<td>{{ $docente->email }}</td>
+				<td>{{ $docente->carnetEs }}</td>
+				<td>{{ $docente->cedulaEs }}</td>
+				<td>{{ $docente->celularEs }}</td>
 				<td>
 					<div class="row text-center">
-						<a href="{{ url('/editar/alumno/'.$alumno->id) }}">
+						<a href="{{ url('/editar/docente/'.$docente->id) }}">
 							<div class="btn_opciones">
 							<i class="fas fa-user-edit"></i>
 						</div>
 						</a>
-						<a href="{{ url('/eliminar/alumno/'.$alumno->id) }}">
+						<a href="{{ url('/eliminar/docente/'.$docente->id) }}">
 							<div class="btn_opciones">
 							<i class="fas fa-trash-alt"></i>
 						</div>
@@ -58,7 +58,7 @@
 	    </tbody>
 	  </table>
 
-	  	{{ $alumnos->links() }}
+	  	{{ $docentes->links() }}
 	</div>
 	
 	

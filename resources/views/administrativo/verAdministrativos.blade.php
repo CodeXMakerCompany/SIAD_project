@@ -11,38 +11,32 @@
 </div>
 </center>
 	<div class="container">
-	  <h2>Alumnos del sistema</h2>            
+	  <h2>Administrativos del sistema</h2>            
 	  <table class="table table-dark table-striped">
 	    <thead>
 	      <tr>
 	        <th>Nombre</th>
-	        <th>Lastname</th>
+	        <th>Apellidos</th>
 	        <th>Email</th>
-	        <th>Carnet</th>
-	        <th>Cedula</th>
-	        <th>Celular</th>
 	        <th>Acciones</th>
 	      </tr>
 	    </thead>
 	    <tbody>
 
 	      
-	        @foreach ($alumnos as $alumno)
+	        @foreach ($administrativosA as $administrativo)
 	        <tr>
-	        	<td>{{ $alumno->nombre }}</td>
-				<td>{{ $alumno->apellidos }}</td>
-				<td>{{ $alumno->email }}</td>
-				<td>{{ $alumno->carnetEs }}</td>
-				<td>{{ $alumno->cedulaEs }}</td>
-				<td>{{ $alumno->celularEs }}</td>
+	        	<td>{{ $administrativo->nombre }}</td>
+				<td>{{ $administrativo->apellidos }}</td>
+				<td>{{ $administrativo->email }}</td>
 				<td>
 					<div class="row text-center">
-						<a href="{{ url('/editar/alumno/'.$alumno->id) }}">
+						<a href="{{ url('/editar/administrativo/'.$administrativo->id) }}">
 							<div class="btn_opciones">
 							<i class="fas fa-user-edit"></i>
 						</div>
 						</a>
-						<a href="{{ url('/eliminar/alumno/'.$alumno->id) }}">
+						<a href="{{ url('/eliminar/administrativo/'.$administrativo->id) }}">
 							<div class="btn_opciones">
 							<i class="fas fa-trash-alt"></i>
 						</div>
@@ -57,8 +51,7 @@
 	      
 	    </tbody>
 	  </table>
-
-	  	{{ $alumnos->links() }}
+	  {{ $administrativosA->links() }}
 	</div>
 	
 	

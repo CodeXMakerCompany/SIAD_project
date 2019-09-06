@@ -31,10 +31,21 @@ class AdminController extends Controller
                            'actualizarAlumno',
                            'eliminarAlumno',
                            'addDocente',
+                           'verDocentes',
+                           'editarDocente',
+                           'actualizarDocente',
+                           'eliminarDocente',
                            'addAdministrativo',
                            'saveAdministrativo',
+                           'verAdministrativos',
+                           'editarAdministrativo',
+                           'actualizarAdministrativo',
+                           'eliminarAdministrativo',
                            'addCoordinador',
-                           'saveCoordinador']
+                           'saveCoordinador',
+                           'verCoordinador',
+                           'editarCoordinador',
+                           'actualizarCoordinador']
         ]);
 
     }
@@ -64,7 +75,7 @@ class AdminController extends Controller
 
     public function verAlumnos(){
 
-        $alumnos = User::paginate(6);
+        $alumnos = User::orderBy('id', 'DESC')->paginate(6);
 
         return view('admin.verAlumnos')->with('alumnos', $alumnos);
     }
@@ -198,6 +209,14 @@ class AdminController extends Controller
                      ->with(['message'=>'Alumno eliminado exitosamente']);
     }
 
+    public function verDocentes(){
+
+
+        $docentes = Docente::orderBy('id', 'DESC')->paginate(6);
+
+        return view('docente.verDocentes')->with('docentes', $docentes);
+    }
+
     public function addDocente() {
         return view('admin.añadirDocente');
     }
@@ -242,6 +261,58 @@ class AdminController extends Controller
                      ->with(['message'=>'Docente agregado correctamente.']);      
     }
 
+    public function editarDocente(Request $request, $id) {
+        
+        $docente = Docente::find($id);
+
+
+        return view('docente.editarDocente')->with('docente',$docente)
+                                            ->with(['message'=>'Usuario actualizado exitosamente.']);
+    }
+
+    public function actualizarDocente(Request $request, $id){
+
+
+        $docente = Docente::find($id);
+
+        $nombre = $request->input('nombre');
+        $apellidos = $request->input('apellidos');
+        $cedula = $request->input('cedulaEs');
+        $email = $request->input('email');
+        $celular = $request->input('celular');
+        $direccion = $request->input('direccion');
+
+
+        $docente->nombre    = $nombre;
+        $docente->apellidos = $apellidos;
+        $docente->cedula  = $cedula;
+        $docente->email     = $email;
+        $docente->celular = $celular;
+        $docente->direccion = $direccion;
+
+        $docente->update();
+
+        return redirect()->route('editar.docente', $id)
+                     ->with(['message'=>'Docente actualizado correctamente.']);
+    }
+
+    public function eliminarDocente(Request $request, $id) {
+
+        $docente = Docente::find($id);
+
+        $docente->delete();
+
+         return redirect()->route('ver.docentes')
+                     ->with(['message'=>'Docente eliminado exitosamente']);
+    }
+
+    public function verAdministrativos(){
+
+        $administrativosA = Administrativo::orderBy('id', 'DESC')->paginate(6);
+
+        return view('administrativo.verAdministrativos')->with('administrativosA' , $administrativosA);
+    }
+
     public function addAdministrativo() {
         return view('admin.añadirAdministrativo');
     }
@@ -275,6 +346,51 @@ class AdminController extends Controller
 
             return redirect()->route('admin.añadirAdministrativo')
                      ->with(['message'=>'Administrativo agregado correctamente.']);
+    }
+
+    public function editarAdministrativo(Request $request, $id) {
+        
+        $administrativo = Administrativo::find($id);
+
+        return view('administrativo.editarAdministrativo')->with('administrativo',$administrativo)
+                                         ->with(['message'=>'Usuario actualizado exitosamente.']);
+    }
+
+    public function actualizarAdministrativo(Request $request, $id){
+
+
+        $administrativo = Administrativo::find($id);
+
+        $nombre = $request->input('nombre');
+        $apellidos = $request->input('apellidos');
+        $email = $request->input('email');
+
+
+        $administrativo->nombre    = $nombre;
+        $administrativo->apellidos = $apellidos;
+        $administrativo->email     = $email;
+
+        $administrativo->update();
+
+        return redirect()->route('editar.administrativo', $id)
+                     ->with(['message'=>'Administrativo actualizado correctamente.']);
+    }
+
+    public function eliminarAdministrativo(Request $request, $id) {
+
+        $administrativo = Administrativo::find($id);
+
+        $administrativo->delete();
+
+         return redirect()->route('ver.administrativos')
+                     ->with(['message'=>'Administrativo eliminado exitosamente']);
+    }
+
+    public function verCoordinador(){
+
+        $coordinadores = Coordinador::orderBy('id', 'DESC')->paginate(6);
+
+        return view('coordinador.verCoordinador')->with('coordinadores' , $coordinadores);
     }
 
     public function addCoordinador() {
@@ -316,5 +432,40 @@ class AdminController extends Controller
 
         return redirect()->route('admin.añadirCoordinador')
                      ->with(['message'=>'Coordinador agregado correctamente.']);
+    }
+
+    public function editarCoordinador(Request $request, $id) {
+        
+        $coordinador = Coordinador::find($id);
+
+
+        $carreras = Carrera::all();
+
+
+        return view('docente.editarCoordinador')->with('carreras',$carreras)
+                                         ->with('coordinador', $coordinador)
+                                         ->with(['message'=>'Usuario actualizado exitosamente.']);
+    }
+
+    public function actualizarCoordinador(Request $request, $id){
+
+
+        $coordinador = Coordinador::find($id);
+
+        $carrera = (int)$request->get('carrera');
+        $nombre = $request->input('nombre');
+        $apellidos = $request->input('apellidos');
+        $email = $request->input('email');
+
+
+        $coordinador->carrera_id = $carrera;
+        $coordinador->nombre    = $nombre;
+        $coordinador->apellidos = $apellidos;
+        $coordinador->email     = $email;
+
+        $coordinador->update();
+
+        return redirect()->route('editar.coordinador', $id)
+                     ->with(['message'=>'Coordinador actualizado correctamente.']);
     }
 }
