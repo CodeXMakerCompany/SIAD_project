@@ -36,7 +36,7 @@ Route::post('/enviar', 'MensajeController@storeMessage')->name('mensaje.save');
 //Administradores-Ingreso
 Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'AdminController@login');
-Route::get('/admin/area', 'AdminController@secret');
+Route::get('/admin/area', 'AdminController@secret')->name('admin.area');
 	//Administradores CRUD
 	 /*Alumnos*/
 	Route::get('/admin/añadir-alumno', 'AdminController@addAlumno')->name('admin.añadirAlumno');
@@ -68,6 +68,19 @@ Route::get('/admin/area', 'AdminController@secret');
 	Route::get('/ver/coordinadores', 'AdminController@verCoordinador')->name('ver.coordinador');
 	Route::get('/editar/coordinador/{id}', 'AdminController@editarCoordinador')->name('editar.coordinador');
 	Route::post('/actualizar/coordinador/{id}', 'AdminController@actualizarCoordinador')->name('actualizar.coordinador');
+	Route::get('/eliminar/coordinador/{id}', 'AdminController@eliminarCoordinador')->name('eliminar.coordinador');
+	//Finaliza Rutas CRUD
+
+//Backups y publicaciones administradores
+Route::get('/admin/backups', 'BackupController@showBackups')->name('show.backups');
+Route::post('/admin/subir/backup', 'BackupController@storeBackup')->name('store.backup');
+Route::get('/backup/{filename}', 'BackupController@getBackup');
+Route::get('/backup/eliminar/{id}', 'BackupController@deleteBackup');
+
+Route::get('/admin/mensaje', 'PublicacionAdmController@nuevoMensaje')->name('crear.mensaje');
+Route::post('/admin/guardar/mensaje', 'PublicacionAdmController@storeMensaje')->name('store.mensaje');
+Route::get('/admin/postImage/{filename}', 'PublicacionAdmController@getImage')->name('message.image');
+Route::get('/admin/mensaje/delete/{id}', 'PublicacionAdmController@deleteMensaje')->name('message.delete');
 
 //Docentes-Ingreso
 Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');

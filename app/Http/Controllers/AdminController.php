@@ -14,6 +14,7 @@ use App\User;
 use App\Docente;
 use App\Administrativo;
 use App\Coordinador;
+use App\PublicacionAdm;
 
 class AdminController extends Controller
 {
@@ -45,7 +46,8 @@ class AdminController extends Controller
                            'saveCoordinador',
                            'verCoordinador',
                            'editarCoordinador',
-                           'actualizarCoordinador']
+                           'actualizarCoordinador',
+                           'eliminarCoordinador']
         ]);
 
     }
@@ -62,13 +64,33 @@ class AdminController extends Controller
 
     public function authenticated(){
 
+
     	return redirect('admin/area');
     
     }
 
     public function secret() {
 
-    	return view('admin.dashboard');
+        $users = User::all();
+        $users = count($users);
+
+        $docentes = Docente::all();
+        $docentes = count($docentes);
+
+        $administrativos = Administrativo::all();
+        $administrativos = count($administrativos);
+
+        $coordinadores = Coordinador::all();
+        $coordinadores = count($coordinadores);
+
+        $mensajes = PublicacionAdm::orderBy('id','DESC')->paginate(10);
+
+
+    	return view('admin.dashboard')->with('users', $users)
+                                      ->with('docentes', $docentes)
+                                      ->with('administrativos', $administrativos)
+                                      ->with('coordinadores', $coordinadores)
+                                      ->with('mensajes', $mensajes);
     	//'Hola ' .auth('admins')->user()->email;
 
     }
@@ -467,5 +489,15 @@ class AdminController extends Controller
 
         return redirect()->route('editar.coordinador', $id)
                      ->with(['message'=>'Coordinador actualizado correctamente.']);
+    }
+
+    public function eliminarCoordinador(Request $request, $id) {
+
+        $coordinador = Coordinador::find($id);
+
+        $coordinador->delete();
+
+         return redirect()->route('ver.coordinador')
+                     ->with(['message'=>'Coordinador eliminado exitosamente']);
     }
 }

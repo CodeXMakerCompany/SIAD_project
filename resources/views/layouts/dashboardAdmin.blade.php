@@ -44,13 +44,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Enviar mensaje global</a>
+                                <a class="nav-link" href="{{ route('admin.area') }}">Inicio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Agregar Backup</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('crear.mensaje') }}">Enviar mensaje global</a>
                             </li>
+                            
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Gestionar backups</a>
+                                <a class="nav-link" href="{{ route('show.backups') }}">Gestionar backups</a>
                             </li>
                             <li class="nav-item">
                             	<span class="nav-link">Fecha registro: {{ Auth::user()->created_at }}</span>
