@@ -34,6 +34,10 @@ class User extends Authenticatable
 
     //cada alumno contara con multiples tareas entregadas
     public function tareas_entregadas(){
-        return $this->hasMany('App\Entrega_tarea');
+        return $this->hasMany('App\Entrega_tarea', 'estudiante_id');
+    }
+
+    public function mensajes_enviados(){
+        return $this->hasMany('App\Mensaje', 'alumno_id');
     }
 }

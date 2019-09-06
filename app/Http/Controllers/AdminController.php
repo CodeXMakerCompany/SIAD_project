@@ -27,6 +27,9 @@ class AdminController extends Controller
                            'addAlumno',
                            'saveAlumno',
                            'verAlumnos',
+                           'editarAlumno',
+                           'actualizarAlumno',
+                           'eliminarAlumno',
                            'addDocente',
                            'addAdministrativo',
                            'saveAdministrativo',
@@ -61,7 +64,7 @@ class AdminController extends Controller
 
     public function verAlumnos(){
 
-        $alumnos = User::all();
+        $alumnos = User::paginate(6);
 
         return view('admin.verAlumnos')->with('alumnos', $alumnos);
     }
@@ -131,6 +134,68 @@ class AdminController extends Controller
        
 
         
+    }
+
+    public function editarAlumno(Request $request, $id) {
+        
+        $usuario = User::find($id);
+
+        $grupos = Grupo::all();
+        $carreras = Carrera::all();
+        $horarios = Horario::all();
+
+
+        return view('admin.editarAlumno')->with('grupos',$grupos)
+                                         ->with('carreras',$carreras)
+                                         ->with('horarios',$horarios)
+                                         ->with('usuario', $usuario)
+                                         ->with(['message'=>'Usuario actualizado exitosamente.']);
+    }
+
+    public function actualizarAlumno(Request $request, $id){
+
+        $usuario = User::find($id);
+
+        $grupo = (int)$request->get('grupo');
+        $nombre = $request->input('nombre');
+        $apellidos = $request->input('apellidos');
+        $carnet = $request->input('carnetEs');
+        $cedula = $request->input('cedulaEs');
+        $email = $request->input('email');
+        $celular = $request->input('celular');
+        $direccion = $request->input('direccion');
+
+        $usuario->grupo_id  = $grupo;
+        $usuario->nombre    = $nombre;
+        $usuario->apellidos = $apellidos;
+        $usuario->carnetEs  = $carnet;
+        $usuario->cedulaEs  = $cedula;
+        $usuario->email     = $email;
+        $usuario->celularEs = $celular;
+        $usuario->direccionEs = $direccion;
+
+        $usuario->update();
+
+        return redirect()->route('editar.alumno', $id)
+                     ->with(['message'=>'Usuario actualizado correctamente.']);
+    }
+
+    
+
+    public function eliminarAlumno(Request $request, $id) {
+
+        $usuario = User::find($id);
+        
+        //borro las tareas paso el parametro asignado
+        $usuario->tareas_entregadas($id)->delete();
+
+        //borro los mensajes paso el parametro asignado
+        $usuario->mensajes_enviados($id)->delete();
+
+        $usuario->delete();
+
+         return redirect()->route('ver.alumnos')
+                     ->with(['message'=>'Alumno eliminado exitosamente']);
     }
 
     public function addDocente() {

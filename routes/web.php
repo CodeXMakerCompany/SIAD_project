@@ -42,6 +42,10 @@ Route::get('/admin/area', 'AdminController@secret');
 	Route::get('/admin/añadir-alumno', 'AdminController@addAlumno')->name('admin.añadirAlumno');
 	Route::post('/save/alumno', 'AdminController@saveAlumno')->name('save.alumno');
 	Route::get('/ver/alumnos', 'AdminController@verAlumnos')->name('ver.alumnos');
+	Route::get('/editar/alumno/{id}', 'AdminController@editarAlumno')->name('editar.alumno');
+	Route::post('/actualizar/alumno/{id}', 'AdminController@actualizarAlumno')->name('actualizar.alumno');
+	Route::get('/eliminar/alumno/{id}', 'AdminController@eliminarAlumno')->name('eliminar.alumno');
+
 	/*Docentes*/
 	Route::get('/admin/añadir-docente', 'AdminController@addDocente')->name('admin.añadirDocente');
 	Route::post('/save/docente', 'AdminController@saveDocente')->name('save.docente');

@@ -194,3 +194,13 @@ a.article:hover {
         display: none;
     }
 }
+/*navbar ends*/
+
+/*btns opciones usuarios*/
+.btn_opciones{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 12px;
+}

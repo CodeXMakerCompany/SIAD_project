@@ -18,13 +18,7 @@
                             <a href="{{ route('admin.añadirAlumno') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Eliminar</a>
-                        </li>
-                        <li>
-                            <a href="#">Actualizar</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('ver.alumnos') }}">Ver</a>
+                            <a href="{{ route('ver.alumnos') }}">Gestionar alumnos</a>
                         </li>
                     </ul>
                 </li>
@@ -36,13 +30,7 @@
                             <a href="{{ route('admin.añadirDocente') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Eliminar</a>
-                        </li>
-                        <li>
-                            <a href="#">Actualizar</a>
-                        </li>
-                        <li>
-                            <a href="#">Ver</a>
+                            <a href="#">Gestionar docentes</a>
                         </li>
                     </ul>
                 </li>
@@ -54,13 +42,7 @@
                             <a href="{{ route('admin.añadirAdministrativo') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Eliminar</a>
-                        </li>
-                        <li>
-                            <a href="#">Actualizar</a>
-                        </li>
-                        <li>
-                            <a href="#">Ver</a>
+                            <a href="#">Gestionar administrativos</a>
                         </li>
                     </ul>
                 </li>
@@ -72,13 +54,7 @@
                             <a href="{{ route('admin.añadirCoordinador') }}">Añadir</a>
                         </li>
                         <li>
-                            <a href="#">Eliminar</a>
-                        </li>
-                        <li>
-                            <a href="#">Actualizar</a>
-                        </li>
-                        <li>
-                            <a href="#">Ver</a>
+                            <a href="#">Gestionar coordinadores</a>
                         </li>
                     </ul>
                 </li>

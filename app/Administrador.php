@@ -26,4 +26,5 @@ class Administrador extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }

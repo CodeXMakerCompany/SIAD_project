@@ -12,6 +12,7 @@
 	        <th>Carnet</th>
 	        <th>Cedula</th>
 	        <th>Celular</th>
+	        <th>Acciones</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -25,12 +26,30 @@
 				<td>{{ $alumno->carnetEs }}</td>
 				<td>{{ $alumno->cedulaEs }}</td>
 				<td>{{ $alumno->celularEs }}</td>
+				<td>
+					<div class="row text-center">
+						<a href="{{ url('/editar/alumno/'.$alumno->id) }}">
+							<div class="btn_opciones">
+							<i class="fas fa-user-edit"></i>
+						</div>
+						</a>
+						<a href="{{ url('/eliminar/alumno/'.$alumno->id) }}">
+							<div class="btn_opciones">
+							<i class="fas fa-trash-alt"></i>
+						</div>
+						</a>
+						
+					</div>
+
+				</td>
  			</tr>
 			@endforeach
 	     
 	      
 	    </tbody>
 	  </table>
+
+	  	{{ $alumnos->links() }}
 	</div>
 	
 	
