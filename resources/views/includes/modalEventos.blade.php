@@ -75,7 +75,7 @@
             <label for="fecha_final">Fecha final:  </label>
 
             <div class="input-group" data-autoclose="true">
-              <input name="fecha_final" ype="text" id="fecha_final" class="form-control">
+              <input name="fecha_final" type="text" id="fecha_final" class="form-control">
             </div>
 
             

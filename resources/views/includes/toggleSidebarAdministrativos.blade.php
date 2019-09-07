@@ -12,11 +12,11 @@
                 <p>{{ Auth::user()->email }}</p>
 
                 <li>
-                    <a href="">Planificación de actividades</a>
+                    <a href="{{ route('show.events') }}">Planificación de actividades</a>
                 </li>
 
                 <li>
-                    <a href="">Publicar</a>
+                    <a href="{{ route('administrativos.posts') }}">Publicar</a>
                 </li>
 
                 

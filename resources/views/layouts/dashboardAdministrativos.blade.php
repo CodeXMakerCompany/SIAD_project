@@ -52,6 +52,11 @@
                                     {{Auth::user()->apellidos}}
                                 </a>
                             </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('administrativos.area') }}">Agenda
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

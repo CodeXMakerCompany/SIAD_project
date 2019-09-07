@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\Input;
 use App\Evento;
 
 class EventsController extends Controller
-{
+{   
+    //filtro y recuperar la variable de usuario autentificado
+    function __construct(){
+
+        $this->middleware('auth:administrativos', ['only' => ['show_events','delete_event','edit_event','update_event']]);
+
+    }
     
     public function get_events() {
 
@@ -46,12 +52,52 @@ class EventsController extends Controller
 
     }
 
-    public function edit_event(Request $request) {
-
-    	$input = $request->all();
-
+    public function show_events() {
     	
-    	var_dump($input);
-    	die();
+        $eventos = Evento::orderBy('id','DESC')->paginate(10);
+    	
+    	return view('administrativo.verEventos')->with('eventos', $eventos);
+
+    }
+
+    public function delete_event($id) {
+
+        $evento = Evento::find($id);
+
+
+        $evento->delete();
+
+
+        return redirect()->route('show.events')
+                     ->with(['message'=>'Evento eliminado correctamente.']);
+    }
+
+    public function edit_event($id){
+
+        $evento = Evento::find($id);
+
+        return view('administrativo.editarEvento')->with('evento', $evento);
+    }
+
+    public function update_event(Request $request, $id){
+
+        $evento = Evento::find($id);
+
+        $titulo = $request->input('title');
+        $descripcion = $request->input('description');
+        $fecha_inicio = $request->input('start');
+        $fecha_final = $request->input('end');
+
+
+        $evento->title = $titulo;
+        $evento->description = $descripcion;
+        $evento->start = $fecha_inicio;
+        $evento->end = $fecha_final;
+
+
+        $evento->save();
+
+        return redirect()->route('edit.event', $id)
+                     ->with(['message'=>'Evento actualizado.']);
     }
 }

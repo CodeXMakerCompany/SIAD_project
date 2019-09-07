@@ -95,3 +95,11 @@ Route::get('/administrativo/area', 'AdministrativoController@secret')->name('adm
 //Events
 Route::get('/evento/get', 'EventsController@get_events');
 Route::post('/evento/crear', 'EventsController@create_event')->name('evento.create');
+Route::get('/eventos/ver', 'EventsController@show_events')->name('show.events');
+Route::get('/evento/eliminar/{id}', 'EventsController@delete_event')->name('delete.event');
+Route::get('/evento/editar/{id}', 'EventsController@edit_event')->name('edit.event');
+Route::post('/evento/actualizar/{id}', 'EventsController@update_event')->name('update.event');
+//Post_mensaje
+Route::get('/administrativo/mensaje', 'AdministrativoController@getPosts')->name('administrativos.posts');
+Route::post('/administrativo/guardar/mensaje', 'AdministrativoController@storeMensaje')->name('store.mensajeAdministrativo');
+Route::get('/administrativo/delete/mensaje/{id}', 'AdministrativoController@deleteMessage');
