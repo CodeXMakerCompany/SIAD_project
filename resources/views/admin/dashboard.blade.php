@@ -76,6 +76,7 @@
           
           <div class="card-body">
             <h5 class="card-title">{{ $mensaje->titulo }}</h5>
+            <small>Enviado por admin: {{ $mensaje->id }}</small>
             <p class="card-text">{{ $mensaje->contenido }}</p>
             <a href="{{ url('/admin/mensaje/delete/'.$mensaje->id) }}" class="btn btn-danger">Eliminar</a>
           </div>

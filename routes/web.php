@@ -91,3 +91,6 @@ Route::get('/docente/area', 'DocenteController@secret');
 Route::get('/administrativo/login', 'AdministrativoController@showLoginForm')->name('administrativo.login');
 Route::post('/administrativo/login', 'AdministrativoController@login');
 Route::get('/administrativo/area', 'AdministrativoController@secret');
+
+//Events
+Route::get('/evento/get', 'EventsController@get_events');

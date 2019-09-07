@@ -37,9 +37,13 @@ class AdministrativoController extends Controller
     }
 
     public function secret() {
+        
 
     	return view('administrativo.dashboard');
     	//'Hola ' .auth('admins')->user()->email;
 
     }
+
+
+
 }
