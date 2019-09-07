@@ -90,7 +90,8 @@ Route::get('/docente/area', 'DocenteController@secret');
 //Administrativos-Ingreso
 Route::get('/administrativo/login', 'AdministrativoController@showLoginForm')->name('administrativo.login');
 Route::post('/administrativo/login', 'AdministrativoController@login');
-Route::get('/administrativo/area', 'AdministrativoController@secret');
+Route::get('/administrativo/area', 'AdministrativoController@secret')->name('administrativos.area');
 
 //Events
 Route::get('/evento/get', 'EventsController@get_events');
+Route::post('/evento/crear', 'EventsController@create_event')->name('evento.create');

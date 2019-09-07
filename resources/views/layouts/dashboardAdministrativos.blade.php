@@ -13,6 +13,9 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
+    <!-- ClockPicker Stylesheet -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-clockpicker.min.css') }}">
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -89,6 +92,25 @@
     <script type="text/javascript" src="{{ asset('js/navbar.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script>
+
+    <script type="text/javascript" src="{{ asset('js/bootstrap-clockpicker.min.js') }}"></script>
+
+    <script type="text/javascript">
+$('.clockpicker').clockpicker()
+    .find('input').change(function(){
+        // TODO: time changed
+        console.log(this.value);
+    });
+$('#demo-input').clockpicker({
+    autoclose: true
+});
+
+if (something) {
+    // Manual operations (after clockpicker is initialized).
+    $('#demo-input').clockpicker('show') // Or hide, remove ...
+            .clockpicker('toggleView', 'minutes');
+}
+</script>
 </body>
 
 </html>

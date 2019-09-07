@@ -1,6 +1,6 @@
 $(function (){
 
-        
+        /*IMPORTANTE!! CAMBIAR AL MOMENTO DE PRODUCCION!!!*/
         evt = [];
         $.ajax({
             url: 'http://localhost/siadProyectV0/public/evento/get',
@@ -22,11 +22,11 @@ $(function (){
         },
         customButtons:{
             Guia:{
-                text:"Soy una guia",
+                text:"Guia",
                 click:function(){
                     Swal.fire(
-                      'Good job!',
-                      'You clicked the button!',
+                      'Bienvenido!',
+                      'Dirigete a planificación de actividades,  para gestionar el contenido de tu agenda.',
                       'success'
                     )
                 }
@@ -34,10 +34,20 @@ $(function (){
             }
         },
         dayClick:function(date,jsEvent,view){
+            $("#fecha_inicio").val(date.format());
+            $("#fecha_final").val(date.format());
             $(this).css('background-color','#66073D');
             $("#modalEventos").modal();
         },
-        events: evt
+        events: evt,
+        eventClick: function(calEvent, jsEvent, view) {
+
+    
+    // change the border color just for fun
+    $(this).css('border-color', 'red');
+
+  }
+
     });
 
 })
