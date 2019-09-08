@@ -42,19 +42,30 @@
                                     	<hr>
                                     <div class="row">
                                     	<div class="col-md-4">
+                                            <h6>Grupo</h6>
                                     		<span>{{ $alumno->grupo->nombre }}</span>
                                     	</div>
                                     	<div class="col-md-4">
+                                            <h6>Horario</h6>
                                     		<span>{{ $alumno->horario->NombreHorario }}</span>
                                     	</div>
                                     	<div class="col-md-4">
+                                            <h6>Carrera</h6>
                                     		<span>
                                     			{{ $alumno->carrera->NombreCarrera }}
                                     		</span>
                                     	</div>
                                     </div>
                                     <hr>
-                                    <a href="{{ route('mensaje.docente', ['id' => $alumno->id]) }}" class="btn btn-primary btn-sm"><i class="fas fa-comment-dots"></i></a>
+                                    <a href="{{ route('mensaje.docente', ['id' => $alumno->id]) }}" class="btn btn-primary btn-sm"
+                                        data-toggle="tooltip" data-placement="top" title="Chatear"><i class="fas fa-comment-dots"></i></a>
+
+                                    <a href="
+                                    {{ route('ver.todaslastareas', ['id' => $alumno->id]) }}" 
+                                    class="btn btn-success btn-sm" 
+                                    data-toggle="tooltip" data-placement="top" title="Ver tareas"><i class="fas fa-file"></i></a>
+
+                                    
                                 </div>
                             </div>
                         </div>

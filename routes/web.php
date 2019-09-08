@@ -103,7 +103,7 @@ Route::get('/administrativo/delete/mensaje/{id}', 'AdministrativoController@dele
 //Docentes-Ingreso
 Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');
 Route::post('/docente/login', 'DocenteController@login');
-Route::get('/docente/area', 'DocenteController@secret');
+Route::get('/docente/area', 'DocenteController@secret')->name('docente.area');
 Route::get('/docente/material', 'DocenteController@getMaterial')->name('docente.material');
 Route::post('/docente/agregar/material','DocenteController@storeMaterial')->name('store.material');
 Route::get('/material/eliminar/{id}','DocenteController@deleteMaterial')->name('eliminar.material');
@@ -112,3 +112,11 @@ Route::get('/material/descargar/{filename}','DocenteController@downloadMaterial'
 	Route::get('/docente/chat/{search?}', 'DocenteController@getAlumnos')->name('mostrar.alumnos');
 	Route::get('/docente/iniciar/chat/{id}', 'DocenteController@chatDocente')->name('mensaje.docente');
 	Route::post('/mensaje/enviar', 'MensajeDocController@storeMessage')->name('mensajeDoc.save');
+//Tareas
+Route::get('/docente/enviar/tarea', 'PlanificacionTareaController@showTareas')->name('show.tareas');
+Route::post('/docente/guardar/tarea', 'PlanificacionTareaController@storeTarea')->name('store.newTarea');
+
+Route::get('/docente/tarea/alumno/{id}', 'PlanificacionTareaController@getTareasAlumno')->name('ver.todaslastareas');
+Route::get('/docente/evaluacion/alumno/{id}/{id_tarea}', 'PlanificacionTareaController@setEvaluacion')->name('evaluacion.alumno');
+Route::get('/tarea/{filename}', 'PlanificacionTareaController@getHomework');
+Route::post('/docente/evaluacion', 'PlanificacionTareaController@storeEvaluacion')->name('store.evaluacion');

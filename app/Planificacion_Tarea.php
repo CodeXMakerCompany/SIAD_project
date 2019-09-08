@@ -11,13 +11,13 @@ class Planificacion_Tarea extends Model
     //regresar al docente que publico la tarea
     public function docente() {
 
-    	return $this->hasOne('App\Docente');
+    	return $this->belongsTo('App\Docente');
 
     }
 
     //regresar la asignatura de la tarea
     public function asignatura() {
 
-    	return $this->hasOne('App\Asignatura');
+    	return $this->belongsTo('App\Asignatura');
     }
 }

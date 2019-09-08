@@ -44,6 +44,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('docente.area') }}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('mostrar.alumnos') }}">Chat</a>
                             </li>   
                         </ul>

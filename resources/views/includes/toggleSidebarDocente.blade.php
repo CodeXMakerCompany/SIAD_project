@@ -12,13 +12,10 @@
                 <p>{{ Auth::user()->email }}</p>
 
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Materia didáctico</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Material didáctico</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="{{ route('docente.material') }}">Gestionar</a>
-                        </li>
-                        <li>
-                            <a href="#">Enviar</a>
                         </li>
                     </ul>
                 </li>
@@ -27,16 +24,16 @@
                     <a href="#tareasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tareas</a>
                     <ul class="collapse list-unstyled" id="tareasSubmenu">
                         <li>
-                            <a href="#">Enviar</a>
+                            <a href="{{ route('show.tareas') }}">Enviar</a>
                         </li>
                         <li>
-                            <a href="#">Recibidas</a>
+                            <a href="{{ route('mostrar.alumnos') }}">Recibidas</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="">Planificación</a>
+                    <a href="{{ route('mostrar.alumnos') }}">Evaluación</a>
                 </li>
                 
 
