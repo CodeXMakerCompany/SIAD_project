@@ -8,8 +8,6 @@
                 </div>
     @endif
     
-
-
     <section id="tabs">
     <div class="container">
         <h6 class="section-title h1">Bienvenido</h6>
@@ -25,16 +23,97 @@
                 </nav>
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <h5>Aqui van las publicaciones de los administrativos</h5>
+                        
+                        @foreach ($mensajesGlobales as $mensaje)
+                            <div class="container" align="center">
+
+                            <div class="card col-md-10" align="center">
+                                <div class="ajusteImagenMensage" align="center">
+                                    @if ($mensaje->imagen)
+                                    <img src="{{ url('/admin/postImage/'.$mensaje->imagen) }}" class="card-img-top" alt="...">
+                                    @endif
+                                </div>
+                                
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">{{ $mensaje->titulo }}</h5>
+                                <small>Enviado por admin: {{ $mensaje->id }}</small>
+                                <p class="card-text">{{ $mensaje->contenido }}</p>
+                                
+                              </div>
+                            </div>
+
+                    </div>
+                        @endforeach
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <h5>Aqui van las publicaciones de administracion</h5>
+                        @foreach ($mensajesAdministracion as $mensaje)
+                            <div class="container" align="center">
+
+                            <div class="card col-md-10" align="center">
+                                <div class="ajusteImagenMensage" align="center">
+                                    @if ($mensaje->imagen)
+                                    <img src="{{ url('/admin/postImage/'.$mensaje->imagen) }}" class="card-img-top" alt="...">
+                                    @endif
+                                </div>
+                                
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">{{ $mensaje->titulo }}</h5>
+                                <small>Enviado por admin: {{ $mensaje->id }}</small>
+                                <p class="card-text">{{ $mensaje->contenido }}</p>
+                                
+                              </div>
+                            </div>
+
+                    </div>
+                        @endforeach
                     </div>
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        <h5>Las ultimas tareas registradas</h5>
+                        @foreach ($tareas as $mensaje)
+                            <div class="container" align="center">
+
+                            <div class="card col-md-10" align="center">
+                                <div class="ajusteImagenMensage" align="center">
+                                    @if ($mensaje->imagen)
+                                    <img src="{{ url('/admin/postImage/'.$mensaje->imagen) }}" class="card-img-top" alt="...">
+                                    @endif
+                                </div>
+                                
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">{{ $mensaje->titulo }}</h5>
+                                <small>Enviado por admin: {{ $mensaje->id }}</small>
+                                <p class="card-text">{{ $mensaje->contenido }}</p>
+                                
+                              </div>
+                            </div>
+
+                    </div>
+                        @endforeach
                     </div>
                     <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                        <h5>Todo el material didactico del sistema</h5>
+                        @foreach ($materialDidactico as $mensaje)
+                            <div class="container" align="center">
+
+                            <div class="card col-md-10" align="center">
+                                <div class="ajusteImagenMensage" align="center">
+                                    @if ($mensaje->imagen)
+                                    <img src="{{ url('/admin/postImage/'.$mensaje->imagen) }}" class="card-img-top" alt="...">
+                                    @endif
+                                </div>
+                                
+                              
+                              <div class="card-body">
+                                <h5 class="card-title">{{ $mensaje->titulo }}</h5>
+                                <small>Enviado por admin: {{ $mensaje->id }}</small>
+                                <p class="card-text">{{ $mensaje->contenido }}</p>
+                                
+                              </div>
+                            </div>
+
+                    </div>
+                        @endforeach
                     </div>
                 </div>
             

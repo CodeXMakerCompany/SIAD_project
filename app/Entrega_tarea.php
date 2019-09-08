@@ -15,4 +15,5 @@ class Entrega_tarea extends Model
  	public function asignatura(){
     	return $this->belongsTo('App\Asignatura');
     }
+
 }

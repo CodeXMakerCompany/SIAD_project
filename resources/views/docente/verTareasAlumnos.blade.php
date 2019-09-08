@@ -25,7 +25,6 @@
 	        <th>Entregada el</th>
 	        <th>Revisar</th>
 	        <th>Evaluar</th>
-	        <th>Calificación</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -49,12 +48,7 @@
                                     <i class="fas fa-pencil-alt"></i>
                           </i></a>
 		        	</td>
-		        	<td>
-		        		{{-- @if (condition)
-		        			 expr
-		        		@endif --}}
-		        		{{ $tarea->id }}
-		        	</td>
+
  			</tr>
 			@endforeach
 

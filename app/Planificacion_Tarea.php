@@ -20,4 +20,5 @@ class Planificacion_Tarea extends Model
 
     	return $this->belongsTo('App\Asignatura');
     }
+
 }

@@ -70,6 +70,7 @@ class PlanificacionTareaController extends Controller
     	$tareas = Entrega_tarea::where('estudiante_id', $id)
     							->orderBy('id','DESC');
 
+
     	$tareas = $tareas->paginate(10);
 
     	return view('docente.verTareasAlumnos')->with('tareas', $tareas);
