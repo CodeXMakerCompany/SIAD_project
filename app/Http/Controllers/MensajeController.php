@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Mensaje;
+use App\MensajeDoc;
 use App\Docente;
 
 class MensajeController extends Controller
@@ -26,17 +27,25 @@ class MensajeController extends Controller
    		//id docente
    		$docente = Docente::find($id_docente);
 
-   		//mensaje
+   		//mensaje de los docentes en la session de usuarios
+         $collectionDocentes = MensajeDoc::all();
+         //mensaje
    		$collection = Mensaje::all();
+
+      
+      $mensajeDocente = $collectionDocentes->where('docente_id', '=', $id_docente);
 
 		$mensajes = $collection->where('alumno_id', '=', $id);	
 
 		$mensajes->all();
 
+      $mensajeDocente->all();
+
    		return view('mensaje.chat')->with('id', $id)
    								   ->with('id_docente', $id_docente)
    								   ->with('docente', $docente)
-   								   ->with('mensajes', $mensajes);
+   								   ->with('mensajes', $mensajes)
+                              ->with('mensajeDocente', $mensajeDocente);
    }
 
    public function storeMessage(Request $request){

@@ -82,11 +82,6 @@ Route::post('/admin/guardar/mensaje', 'PublicacionAdmController@storeMensaje')->
 Route::get('/admin/postImage/{filename}', 'PublicacionAdmController@getImage')->name('message.image');
 Route::get('/admin/mensaje/delete/{id}', 'PublicacionAdmController@deleteMensaje')->name('message.delete');
 
-//Docentes-Ingreso
-Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');
-Route::post('/docente/login', 'DocenteController@login');
-Route::get('/docente/area', 'DocenteController@secret');
-
 //Administrativos-Ingreso
 Route::get('/administrativo/login', 'AdministrativoController@showLoginForm')->name('administrativo.login');
 Route::post('/administrativo/login', 'AdministrativoController@login');
@@ -103,3 +98,17 @@ Route::post('/evento/actualizar/{id}', 'EventsController@update_event')->name('u
 Route::get('/administrativo/mensaje', 'AdministrativoController@getPosts')->name('administrativos.posts');
 Route::post('/administrativo/guardar/mensaje', 'AdministrativoController@storeMensaje')->name('store.mensajeAdministrativo');
 Route::get('/administrativo/delete/mensaje/{id}', 'AdministrativoController@deleteMessage');
+
+
+//Docentes-Ingreso
+Route::get('/docente/login', 'DocenteController@showLoginForm')->name('docente.login');
+Route::post('/docente/login', 'DocenteController@login');
+Route::get('/docente/area', 'DocenteController@secret');
+Route::get('/docente/material', 'DocenteController@getMaterial')->name('docente.material');
+Route::post('/docente/agregar/material','DocenteController@storeMaterial')->name('store.material');
+Route::get('/material/eliminar/{id}','DocenteController@deleteMaterial')->name('eliminar.material');
+Route::get('/material/descargar/{filename}','DocenteController@downloadMaterial')->name('descargar.material');
+	//El chat
+	Route::get('/docente/chat/{search?}', 'DocenteController@getAlumnos')->name('mostrar.alumnos');
+	Route::get('/docente/iniciar/chat/{id}', 'DocenteController@chatDocente')->name('mensaje.docente');
+	Route::post('/mensaje/enviar', 'MensajeDocController@storeMessage')->name('mensajeDoc.save');

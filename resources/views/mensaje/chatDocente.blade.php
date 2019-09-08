@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboardDocente')
 
 @section('content')
 	<center>
@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            	<div class="card-header">{{ __('Chat') }} {{ $docente->nombre }}</div>
+            	<div class="card-header">{{ __('Chat') }} {{ $alumno->nombre }}</div>
 
 					<div class="card-body row">
 
@@ -24,66 +24,79 @@
 								
 								@foreach ($mensajes as $mensaje)
 								
-								<div align="right">
-									@if ($mensaje->alumno_id === $id)
+								<div align="left">
+									@if ($mensaje->docente_id === $id)
 										
-										@if ($mensaje->destinatarioDocente_id === $docente->id)
-										Yo:
-											<div class="col-md-12 alert alert-success">
-												<div>
-													{{ $mensaje->contenido }}
-												</div>
-											
-											<small>{{ $mensaje->created_at }}</small> 
+										@if ($mensaje->destinatarioAlumno_id === $alumno->id)
+											<span>Yo:</span>			
+											<div class="col-md-10 alert alert-primary">
+											{{ $mensaje->contenido }}
+											<div>
+													<small>{{ $mensaje->created_at }}
+												</small>
+												</div> 
 										</div>
 										@endif
 										
+
+									@else
+
+										
 								@endif
-								</div>	
+								</div>
+									
 								@endforeach
 							@endif
 
+							
 						</div>
+						
 						<div class="col-md-6 chat-container">
-							@if ($mensajeDocente)
-								<div align="right">
-									@foreach ($mensajeDocente as $mensajeDoc)
+							@if ($mensajeAlumno)
 
-										@if ($mensajeDoc->docente_id === $docente->id)
-										@if ($mensajeDoc->destinatarioAlumno_id === $id)
-											<div class="col-md-12 alert alert-primary">
-												<div>
-													{{ $mensajeDoc->contenido }}
-												</div>
+							<div align="right">
+								@foreach ($mensajeAlumno as $mensajeAlm)
+									@if ($mensajeAlm->alumno_id === $alumno->id)
+										@if ($mensajeAlm->destinatarioDocente_id === $id)
 											
-											<small>{{ $mensajeDoc->created_at }}</small> 
-										</div>
-										@endif
+											<div class="col-md-10 alert alert-success">
+												<div>
+													{{ $mensajeAlm->contenido }}
+												</div>
+												<div>
+													<small>{{ $mensajeAlm->created_at }}
+												</small>
+												</div>
+											</div>
+
+											
 											
 										@endif
 										
-									@endforeach
-								</div>
+
+									@endif
+											
+								@endforeach
+							</div>
+								
 							@endif
 						</div>
-	
+
 					</div>
 
 					<div class="card-footer">
 
-						<form action="{{ route('mensaje.save') }}" method="POST">
+						<form action="{{ route('mensajeDoc.save') }}" method="POST">
 
 							{{ csrf_field() }}
 
 						  <div class="form-group">
 
 						  	<div class="form-group" style="display: none">
-						    <label for="docente">Docente:</label>
-						    <select name="docente" id="" class="form-control" id="docente">
-								
-									<option value="{{ $docente->id }}">{{ $docente->id }}</option>
-						
-							</select>
+						    <label for="alumno">Alumno:</label>
+						 
+
+							<input type="text" value="{{ $alumno->id }}" name="id_alumno">
 						  </div>
 
 						    <label for="contenido">Mensaje:</label>

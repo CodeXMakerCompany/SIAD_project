@@ -44,17 +44,8 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Enviar mensaje global</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Agregar Backup</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Gestionar backups</a>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link">Fecha registro: {{ Auth::user()->created_at }}</span>
-                            </li>
+                                <a class="nav-link" href="{{ route('mostrar.alumnos') }}">Chat</a>
+                            </li>   
                         </ul>
                     </div>
                 </div>

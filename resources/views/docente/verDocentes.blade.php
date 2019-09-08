@@ -18,7 +18,6 @@
 	        <th>Nombre</th>
 	        <th>Lastname</th>
 	        <th>Email</th>
-	        <th>Carnet</th>
 	        <th>Cedula</th>
 	        <th>Celular</th>
 	        <th>Acciones</th>
@@ -32,9 +31,8 @@
 	        	<td>{{ $docente->nombre }}</td>
 				<td>{{ $docente->apellidos }}</td>
 				<td>{{ $docente->email }}</td>
-				<td>{{ $docente->carnetEs }}</td>
-				<td>{{ $docente->cedulaEs }}</td>
-				<td>{{ $docente->celularEs }}</td>
+				<td>{{ $docente->cedula }}</td>
+				<td>{{ $docente->celular }}</td>
 				<td>
 					<div class="row text-center">
 						<a href="{{ url('/editar/docente/'.$docente->id) }}">

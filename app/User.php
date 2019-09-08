@@ -40,4 +40,20 @@ class User extends Authenticatable
     public function mensajes_enviados(){
         return $this->hasMany('App\Mensaje', 'alumno_id');
     }
+
+    //relacion de una modelo a una tabla que lo contiene relacionado
+    public function grupo(){
+        return $this->belongsTo('App\Grupo');
+    }
+
+    //relacion de una modelo a una tabla que lo contiene relacionado
+    public function horario(){
+        return $this->belongsTo('App\Horario');
+    }
+
+    //relacion de una modelo a una tabla que lo contiene relacionado
+    public function carrera(){
+        return $this->belongsTo('App\Carrera');
+    }
+
 }

@@ -15,7 +15,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Materia didáctico</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Gestionar</a>
+                            <a href="{{ route('docente.material') }}">Gestionar</a>
                         </li>
                         <li>
                             <a href="#">Enviar</a>
