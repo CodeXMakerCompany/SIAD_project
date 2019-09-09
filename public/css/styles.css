@@ -10,8 +10,9 @@ section .section-title {
     text-transform: uppercase;
 }
 #tabs{
-    background: #007b5e;
+    background: #6E1B4A;
     color: #eee;
+    border-radius: 10px;
 }
 #tabs h6.section-title{
     color: #eee;

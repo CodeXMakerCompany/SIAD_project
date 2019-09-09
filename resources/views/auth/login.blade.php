@@ -41,6 +41,13 @@
 
             <div class="card">
                 <div class="card-header">{{ __('Login Alumno') }}</div>
+                
+                <div  align="center">
+                    <div class="col-md-6">
+                    <img class="img-thumbnail" src="{{ asset('img/logoSIAD.png') }}" alt="">
+                    </div>
+                </div>
+                
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">

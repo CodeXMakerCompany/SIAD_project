@@ -7,11 +7,15 @@
 
             <div class="card">
                 <div class="card-header">Login de administrativos</div>
-
+                <div  align="center">
+                    <div class="col-md-6">
+                    <img class="img-thumbnail" src="{{ asset('img/logoSIAD.png') }}" alt="">
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ url('/administrativo/login') }}" aria-label="{{ __('Login') }}">
                         @csrf
-
+            
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

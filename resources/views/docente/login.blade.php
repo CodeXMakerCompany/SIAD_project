@@ -6,7 +6,11 @@
         <div class="col-md-8">
           <div class="card">
                 <div class="card-header">{{ __('Login Docentes') }}</div>
-
+                <div  align="center">
+                    <div class="col-md-6">
+                    <img class="img-thumbnail" src="{{ asset('img/logoSIAD.png') }}" alt="">
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ url('/docente/login') }}" aria-label="{{ __('Login') }}">
                         @csrf

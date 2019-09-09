@@ -7,7 +7,11 @@
 
             <div class="card">
                 <div class="card-header">Login de administrador</div>
-
+                <div  align="center">
+                    <div class="col-md-6">
+                        <img class="img-thumbnail" src="{{ asset('img/logoSIAD.png') }}" alt="">
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ url('/admin/login') }}" aria-label="{{ __('Login') }}">
                         @csrf
@@ -62,9 +66,7 @@
                                     {{ __('Forgot Your Password?') }}
                                 </a>
 
-                                <a href="{{ route('admin.login') }}">
-                                    Login de administrador
-                                </a>
+                                
                             </div>
                         </div>
                     </form>

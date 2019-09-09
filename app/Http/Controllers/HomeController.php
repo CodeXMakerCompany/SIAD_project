@@ -32,10 +32,10 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $mensajesGlobales = PublicacionAdm::all();
-        $mensajesAdministracion = PublicacionAdmini::all();
-        $tareas = Planificacion_Tarea::all();
-        $materialDidactico = MaterialDidactico::all();
+        $mensajesGlobales = PublicacionAdm::orderBy('id', 'desc')->take(5)->get();
+        $mensajesAdministracion = PublicacionAdmini::orderBy('id', 'desc')->take(5)->get();
+        $tareas = Planificacion_Tarea::orderBy('id', 'desc')->take(15)->get();
+        $materialDidactico = MaterialDidactico::orderBy('id', 'desc')->paginate(20);
         
         return view('home')->with('mensajesGlobales', $mensajesGlobales)
                             ->with('mensajesAdministracion', $mensajesAdministracion)
