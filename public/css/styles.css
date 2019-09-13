@@ -64,7 +64,35 @@ section .section-title {
   background: #A2CCDA; 
 }
 
+/*Navbar Laravel*/
+.navbar-laravel {
+    background-color: #132548 !important;
+}
+
+.navbar-brand {
+    color:white !important;
+}
+
 /*Login*/
+
+.card-header{
+    background-color: #3779B2;
+    color: white;
+}
+
+.resize_logo{
+    padding-top: 15px;
+    width: 40%;
+}
+
+.icons{
+    padding-top: 10px;
+   width: 80px;
+}
+
+.admin_txt{
+    color: green;
+}
 
 .row .tipoLogin{
   height: 110px;
@@ -89,8 +117,8 @@ section .section-title {
     padding: 15px 10px;
     background: #fff;
     border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
+    border-radius: 6px;
+    margin-bottom: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -298,3 +326,28 @@ body{
 .ajusteImagenMensage{
     width: 50%;
 }
+
+/*NAVBAR DOCENTES*/
+.navbar-docentes{
+    background-color: #132548 !important;
+}
+.content-color li a{   
+    color: #9C9B9C !important;
+}
+.content-color li a:hover{
+
+    color: #ffff !important;
+}
+
+.content-colorB li a{
+    color: #9C9B9C !important;
+    transition: 1.8s;
+}
+
+.content-colorB li a:hover{
+    
+    text-align: left;
+    color: #000!important;
+    
+}
+/*NAVBAR DOCENTES END*/

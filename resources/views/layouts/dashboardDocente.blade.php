@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Dashboard Docente</title>
+    <title>Dashboard | Docente</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -30,7 +30,7 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-docentes">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -42,15 +42,52 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
+                        <ul class="nav navbar-nav ml-auto content-color">
+
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('docente.area') }}">
+                                    <i class="fas fa-home"></i> 
                                     Inicio
                                 </a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ route('mostrar.alumnos') }}">Chat</a>
-                            </li>   
+                                <a class="nav-link" href="{{ route('docente.material') }}">
+                                    <i class="fas fa-folder-open"></i> Material didáctico
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('show.tareas') }}">
+                                    <i class="fas fa-file"></i> 
+                                    Planificación de tareas
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('mostrar.alumnos') }}">
+                                    <i class="fas fa-pencil-alt"></i> 
+                                    Pantalla de evaluaciones
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('mostrar.alumnos') }}">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    Pantalla de reportes
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('mostrar.alumnos') }}">
+                                <i class="fas fa-comments"></i>
+                             Chat</a>
+                            </li>
+                            <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('logout') }} "(click)="onClick()" >
+                                    <i class="fas fa-power-off"></i> Desconectarse
+                            </a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                        </form>
+                            
+                               
                         </ul>
                     </div>
                 </div>

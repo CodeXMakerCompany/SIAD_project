@@ -3,13 +3,7 @@
             </div>
             
             <ul class="list-unstyled components">
-                @auth
-                logged user stuff here:
-                <p>{{ Auth::user() }}</p>
-                @else
-                guest stuff here
-                @endauth
-                <p>{{ Auth::user()->email }}</p>
+                
 
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Material didáctico</a>

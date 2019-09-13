@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>SIAD</title>
+    <title>ULAT</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                   <img style="height: 40px; width: 40px;" class="img-fluid" alt="Responsive image" src="{{ asset('img/logoSIAD.png') }}" alt="">  SIAD
+                   <img style="height: 40px; width: 40px;" class="img-fluid" alt="Responsive image" src="{{ asset('img/logoSIAD.png') }}" alt="">  ULAT
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
