@@ -5,22 +5,25 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="card">
+            <div class="card" align="center">
                 <div class="card-header">Login de administrativos</div>
                 <div  align="center">
-                    <div class="col-md-6">
-                    <img class="img-thumbnail" src="{{ asset('img/logoSIAD.png') }}" alt="">
+                    <div class="col-md-10">
+                    <img class="img-fluid resize_logo" alt="Responsive image" src="{{ asset('img/logoSIAD.png') }}">
                     </div>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ url('/administrativo/login') }}" aria-label="{{ __('Login') }}">
                         @csrf
             
+                        <h4>Introduce tus datos de acceso</h4>
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                            
+                            <div class="col-md-1 col-sm-2">
+                                <i class="fas fa-envelope icons"></i>
+                            </div>
+                            <div class="col-md-11 col-sm-10">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="Introduce tu email">
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -30,11 +33,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        <div class="form-group row">
+                            
+                            <div class="col-md-1 col-sm-2">
+                                <i class="fas fa-lock icons"></i>
+                            </div>
+
+                            <div class="col-md-11 col-sm-10">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Introduce tu contraseña">
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -43,28 +50,23 @@
                                 @endif
                             </div>
                         </div>
+                        
+                        <center>           
+                            <p class="admin_txt">
+                                Ingrese con sus credenciales de administrador.
+                            </p>                       
+                        </center> 
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
+                        <div class="form-group row col-md-12">
+                            <div class="col-md-6 col-sm-6">
+                                <button type="submit" class="btn btn-success">
+                                    {{ __('Entrar') }}
+                                </button>                                                         
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
+                            <div class="col-md-6 col-sm-6">
+                                <button type="exit" class="btn btn-danger" onclick="window.history.back();">
+                                    {{ __('Salir') }}
+                                </button>                                                         
                             </div>
                         </div>
                     </form>
