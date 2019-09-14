@@ -30,32 +30,88 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-docentes">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menu</span>
-                    </button>
+                    
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{ route('admin.area') }}">Inicio</a>
+
+                        <ul class="nav navbar-nav ml-auto content-colorB">
+
+                            <li class="dropstyle">
+                                <a href="{{ route('admin.area') }}"><i class="fas fa-home"></i> Inicio</a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{ route('crear.mensaje') }}">Enviar mensaje global</a>
+
+                            <li class="dropdown dropstyle">
+                                <a href="#" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-file"></i>&nbsp;&nbsp;Catalogos <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="cuatrimestre.php">Cuatrimestres</a>
+                                    </li>
+                                    <li>
+                                        <a href="grupos.php">Grupos</a>
+                                    </li>
+                                    <li>
+                                        <a href="turnos.php">Turnos</a>
+                                    </li>
+                                    <li>
+                                        <a href="asignaturas.php">Asignaturas</a>
+                                    </li>
+                                </ul>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('show.backups') }}">Gestionar backups</a>
+
+
+
+                        <li class="dropdown  dropstyle">
+                            <a href="#" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-lock"></i> Administracion <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('admin.añadirDocente') }}">Admin de Docentes</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.añadirAlumno') }}">Admin de Estudiantes</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.añadirAdministrativo') }}">Admin Administrativos</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    <li class="dropdown dropstyle">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-toolbox"></i>Herramientas </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="nav-dropdown-link" href="{{ route('ver.administrativos') }}">Permisos</a>
                             </li>
-                            <li class="nav-item">
-                            	<span class="nav-link">Fecha registro: {{ Auth::user()->created_at }}</span>
+                            <li>
+                                <a class="nav-dropdown-link" href="{{ route('show.backups') }}">Backup BD</a>
                             </li>
+                            <li>
+                                <a class="nav-dropdown-link" href="{{ route('crear.mensaje') }}">Enviar mensaje</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown dropstyle">
+                    <a href="{{ route('logout') }} "(click)="onClick()" class="logout">
+                            <i class="fas fa-power-off"></i> {{ __('Logout') }}
+                    </a>
+                </li>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>           
+                
+                    <li>
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                            <span>Menu</span>
+                        </button>
+                    </li>
                         </ul>
                     </div>
                 </div>

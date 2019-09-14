@@ -62,7 +62,7 @@
     <div class="col-md-12">
      <center>
   <div class="card">
-  <div class="card-header" #3F7543>
+  <div class="card-header">
     Catálogo docente
   </div>
   <ul class="list-group list-group-flush content-colorB">
@@ -150,9 +150,9 @@
   <div class="col-md-9 col-sm-12">
     <h5>Docente conectado: {{ auth('docentes')->user()->nombre }} {{ auth('docentes')->user()->apellidos }}</h5>
     <hr>
-    <div class="row">
+    <div class="row col-sm-12">
       <div class="col-md-3 col-sm-12">
-        <div class="card" style="width: 12rem;">
+        <div class="card">
           <div class="card-header" style="background-color: #F5F5F5">
              <img src="{{ asset('img/docente1.png') }}" class="img-fluid" alt="Responsive image" style="padding: 10px;">
           </div>
@@ -166,8 +166,8 @@
       </div>
       
 
-      <div class="col-md-3">
-        <div class="card" style="width: 12rem;">
+      <div class="col-md-3 col-sm-12">
+        <div class="card">
           <div class="card-header" style="background-color: #F5F5F5">
              <img src="{{ asset('img/docente2.png') }}" class="img-fluid" alt="Responsive image" style="padding: 10px;">
           </div>
@@ -180,8 +180,8 @@
       </div>
       </div>
 
-       <div class="col-md-3">
-        <div class="card" style="width: 12rem;">
+       <div class="col-md-3 col-sm-12">
+        <div class="card">
           <div class="card-header" style="background-color: #F5F5F5">
              <img src="{{ asset('img/tareas.png') }}" class="img-fluid" alt="Responsive image" style="padding: 10px;">
           </div>
@@ -194,8 +194,8 @@
       </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="card" style="width: 12rem;">
+      <div class="col-md-3 col-sm-12">
+        <div class="card">
           <div class="card-header" style="background-color: #F5F5F5">
              <img src="{{ asset('img/docente3.png') }}" class="img-fluid" alt="Responsive image" style="padding: 10px;">
           </div>
@@ -208,8 +208,8 @@
       </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="card" style="width: 12rem;">
+      <div class="col-md-3 col-sm-12">
+        <div class="card">
           <div class="card-header" style="background-color: #F5F5F5">
              <img src="{{ asset('img/docente4.png') }}" class="img-fluid" alt="Responsive image" style="padding: 10px;">
           </div>

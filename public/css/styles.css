@@ -116,8 +116,8 @@ section .section-title {
 .navbar {
     padding: 15px 10px;
     background: #fff;
-    border: none;
     border-radius: 6px;
+    margin-top: 0px !important;
     margin-bottom: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -132,7 +132,7 @@ section .section-title {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
+    margin: 4px 0;
 }
 
 /* ---------------------------------------------------
@@ -146,20 +146,25 @@ section .section-title {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #7386D5;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #598EC0;
     color: #fff;
+    border-radius: 6px;
     transition: all 0.3s;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: 250px;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #3B78AE;
 }
 
 #sidebar ul.components {
@@ -189,7 +194,6 @@ section .section-title {
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #282020;
-    background: #6d7fcc;
 }
 
 a[data-toggle="collapse"] {
@@ -207,7 +211,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    transition: 0.3s;
 }
 
 ul.CTAs {
@@ -347,7 +351,21 @@ body{
 .content-colorB li a:hover{
     
     text-align: left;
-    color: #000!important;
+    color: #0083BD !important;
     
 }
 /*NAVBAR DOCENTES END*/
+
+/*dropstyle*/
+
+.dropstyle a{
+    line-height: 50px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dropstyle:hover{
+    border-radius: 6px !important;
+    background-color: #0f0f0f;
+}

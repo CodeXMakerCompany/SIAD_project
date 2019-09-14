@@ -22,6 +22,8 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
+
+            
                 
             @include('includes.toggleSidebarDocente')
             
@@ -33,10 +35,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-docentes">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menu</span>
-                    </button>
+                    
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
@@ -86,6 +85,13 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                         </form>
+
+                        <li>
+                            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                        </li>
                             
                                
                         </ul>
