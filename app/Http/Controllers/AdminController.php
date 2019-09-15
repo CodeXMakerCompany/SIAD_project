@@ -20,6 +20,12 @@ class AdminController extends Controller
 {
     use AuthenticatesUsers;
 
+    //Cantidad de intentos antes de bloquear al usuario
+     public $maxAttempts = 3;
+
+    //Tiempo en minutos que durará el bloqueo
+     public $decayMinutes = 1; 
+
     //filtro para que solo la sesion de admin pueda ingresara las urls
     function __construct(){
 

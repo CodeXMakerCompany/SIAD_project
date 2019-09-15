@@ -17,6 +17,12 @@ class AdministrativoController extends Controller
 
 	use AuthenticatesUsers;
 
+    //Cantidad de intentos antes de bloquear al usuario
+     public $maxAttempts = 3;
+
+    //Tiempo en minutos que durará el bloqueo
+     public $decayMinutes = 1; 
+
 	//filtro y recuperar la variable de usuario autentificado
 	function __construct(){
 
