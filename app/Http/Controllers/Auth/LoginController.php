@@ -20,6 +20,12 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    //Cantidad de intentos antes de bloquear al usuario
+     public $maxAttempts = 3;
+
+    //Tiempo en minutos que durará el bloqueo
+     public $decayMinutes = 1; 
+
     /**
      * Where to redirect users after login.
      *
