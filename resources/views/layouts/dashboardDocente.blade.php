@@ -77,14 +77,17 @@
                                 <i class="fas fa-comments"></i>
                              Chat</a>
                             </li>
-                            <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('logout') }} "(click)="onClick()" >
-                                    <i class="fas fa-power-off"></i> Desconectarse
-                            </a>
-                        </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                        </form>
+                            
+
+                        <li class="nav-item active">
+                    <a class="nav-link logout" href="{{ route('logout') }} "(click)="onClick()">
+
+                            <i class="fas fa-power-off"></i> {{ __('Desconectarse') }}
+                    </a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
 
                         <li>
                             <button type="button" id="sidebarCollapse" class="btn btn-info">

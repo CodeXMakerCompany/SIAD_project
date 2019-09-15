@@ -42,7 +42,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto content-color">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -55,15 +55,25 @@
                             <li class="nav-item">
                                 <a href="{{ route('home') }}"class="nav-link">Inicio</a>
                             </li>
+
                             <li class="nav-item">
-                                <a href="{{ route('user.tarea') }}" class="nav-link">Subir tarea</a>
+                                <a href="{{ route('user.tarea') }}"class="nav-link">Entrega tareas</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="#nav-about-tab"class="nav-link">Material didactico</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#nav-contact-tab"class="nav-link">Tareas Asignadas</a>
+                            </li>
+
                             <li class="nav-item">
                                 <a href="{{ route('mensaje.contactos') }}" class="nav-link">Enviar mensaje</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->nombre }} <span class="caret"></span>
+                            <li class="nav-item">
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->nombre }} <i class="fas fa-sort-down"></i>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -81,6 +91,14 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fas fa-power-off"></i> {{ __('Logout') }}
+                                    </a>
                             </li>
                         @endguest
                     </ul>

@@ -33,30 +33,58 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-docentes">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menu</span>
-                    </button>
+                    
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link">Bienvenido: 
-                                    {{Auth::user()->nombre}}
-                                    {{Auth::user()->apellidos}}
+                        <ul class="nav navbar-nav ml-auto content-colorB">
+                            
+
+                            <li class="dropstyle">
+                                <a href="{{ route('administrativos.area') }}"><i class="fas fa-home"></i> Inicio</a>
+                            </li>
+
+                            <li class="dropstyle">
+                                <a href="{{ route('administrativos.area') }}"><i class="fas fa-calendar"></i> Agenda
                                 </a>
                             </li>
 
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{ route('administrativos.area') }}">Agenda
+                            <li class="dropstyle">
+                                <a href="{{ route('show.events') }}"><i class="fas fa-tasks"></i> Planificación
                                 </a>
                             </li>
+
+                            
+                            <li class="dropstyle">
+                                <a href="{{ route('administrativos.posts') }}"><i class="fas fa-envelope"></i></i> Publicar
+                                </a>
+                            </li>
+
+                            
+
+                            <li class="dropstyle">
+                                <a href="{{ route('logout') }} "(click)="onClick()" class="logout">
+                                    <i class="fas fa-power-off"></i> 
+                                        {{ __('Logout') }}
+                                </a>
+                            </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
+
+                            <li class="dropstyle">
+                                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                                    <i class="fas fa-align-left"></i>
+                                    <span>Menu</span>
+                                </button>
+                            </li>
+
+                            
                         </ul>
                     </div>
                 </div>
